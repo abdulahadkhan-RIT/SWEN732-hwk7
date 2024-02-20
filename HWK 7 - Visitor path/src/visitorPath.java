@@ -4,13 +4,13 @@ interface College {
 }
 
 // Concrete visitable classes
-class BusinessCollege implements College {
+class SaundersCollegeOfBusiness implements College {
     public void accept(Visitor visitor) {
         visitor.visit(this);
     }
 }
 
-class EngineeringCollege implements College {
+class KateGleasonCollegeOfEngineering implements College {
     public void accept(Visitor visitor) {
         visitor.visit(this);
     }
@@ -18,37 +18,37 @@ class EngineeringCollege implements College {
 
 // Visitor interface
 interface Visitor {
-    void visit(BusinessCollege businessCollege);
-    void visit(EngineeringCollege engineeringCollege);
+    void visit(SaundersCollegeOfBusiness businessCollege);
+    void visit(KateGleasonCollegeOfEngineering engineeringCollege);
 }
 
 // Concrete visitor classes
 class Student implements Visitor {
-    public void visit(BusinessCollege businessCollege) {
+    public void visit(SaundersCollegeOfBusiness businessCollege) {
         System.out.println("Student is visiting the Business College.");
     }
 
-    public void visit(EngineeringCollege engineeringCollege) {
+    public void visit(KateGleasonCollegeOfEngineering engineeringCollege) {
         System.out.println("Student is visiting the Engineering College.");
     }
 }
 
 class Faculty implements Visitor {
-    public void visit(BusinessCollege businessCollege) {
+    public void visit(SaundersCollegeOfBusiness businessCollege) {
         System.out.println("Faculty is visiting the Business College.");
     }
 
-    public void visit(EngineeringCollege engineeringCollege) {
+    public void visit(KateGleasonCollegeOfEngineering engineeringCollege) {
         System.out.println("Faculty is visiting the Engineering College.");
     }
 }
 
 class CampusVisitor implements Visitor {
-    public void visit(BusinessCollege businessCollege) {
+    public void visit(SaundersCollegeOfBusiness businessCollege) {
         System.out.println("Campus visitor is visiting the Business College.");
     }
 
-    public void visit(EngineeringCollege engineeringCollege) {
+    public void visit(KateGleasonCollegeOfEngineering engineeringCollege) {
         System.out.println("Campus visitor is visiting the Engineering College.");
     }
 }
@@ -57,8 +57,8 @@ class CampusVisitor implements Visitor {
 public class visitorPath {
     public static void main(String[] args) {
         // Create colleges
-        College businessCollege = new BusinessCollege();
-        College engineeringCollege = new EngineeringCollege();
+        College businessCollege = new SaundersCollegeOfBusiness();
+        College engineeringCollege = new KateGleasonCollegeOfEngineering();
 
         // Create visitors
         Visitor student = new Student();
